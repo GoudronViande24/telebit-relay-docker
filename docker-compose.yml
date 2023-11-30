@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  relay:
+    # Comment out the build line below if you want to use the pre-built image
+    build: .
+    # Uncomment the image line below if you want to use the pre-built image
+    #image: goudronviande24/telebit-relay:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config.yml:/config.yml
+      - ./certs:/certs
+    restart: unless-stopped

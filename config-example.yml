@@ -1,0 +1,30 @@
+# must be valid (for certificate recovery and security alerts)
+email: 'email@example.com'
+
+# agree to the Telebit, Greenlock, and Let's Encrypt TOSes
+agree_tos: true
+
+# receive infrequent relevant but non-critical updates
+community_member: false
+
+# contribute to project telemetric data
+telemetry: false
+
+# JWT authorization secret. Generate like so:
+# node -e "console.log(crypto.randomBytes(16).toString('hex'))"
+secret: ''
+
+# hostnames that direct to the Telebit Relay admin console
+servernames:
+  - telebit-relay.example.com
+  - telebit-relay.example.net
+
+# securely serve local sites from this path (or false)
+# (uses template string, i.e. /var/www/:hostname/public)
+vhost: false
+
+greenlock:
+  # certificate storage plugin
+  store: le-store-certbot
+  # directory for ssl certificates
+  config_dir: /certs
